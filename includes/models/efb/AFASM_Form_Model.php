@@ -109,7 +109,11 @@ class AFASM_Form_Model extends AFASM_Abstract_Form_Model {
 		$results = $wpdb->get_results($sql, OBJECT);
 
 		$forms = $this->prepare_data( $results );
-
+		
+		if ( count( $forms ) > 0 ) {
+			return $forms[0];
+		}
+		
 		return $forms;
 	}
 
