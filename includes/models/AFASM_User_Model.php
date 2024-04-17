@@ -65,11 +65,13 @@ class AFASM_User_Model {
 	 *
 	 * @since 1.0.0
 	 *
+	 * @param int $user_id The user ID.
+	 * 
 	 * @return WP_User $user The user data.
 	 */
-	public function user() {
+	public function user( $user_id ) {
 		global $wp_roles;
-		$user  = wp_get_current_user();
+		$user  = get_user_by('ID', $user_id);
 		$roles = array();
 
 		foreach ( $user->roles as $key => $role ) {

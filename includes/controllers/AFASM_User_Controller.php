@@ -178,7 +178,8 @@ class AFASM_User_Controller {
 	 * @return array $user Some User info.
 	 */
 	public function user( $request ) {
-		return rest_ensure_response( $this->user_model->user() );
+		$user_id = absint( $request['user_id'] );
+		return rest_ensure_response( $this->user_model->user( $user_id ) );
 	}
 
 	/**
@@ -191,16 +192,17 @@ class AFASM_User_Controller {
 	public function user_form_type_me( $request ) {
 		$key = sanitize_text_field( $request['form_type'] );
 
+		$user_id = absint( $request['user_id'] );
+
 		$number_of_forms = 0;
 
 		$form = ( new AFASM_Config() )->form_model( $key );
 
 		if ( is_object( $form ) ) {
-			$user            = wp_get_current_user();
-			$number_of_forms = $form->user_form_count( $user->ID );
+			$number_of_forms = $form->user_form_count( $user_id );
 		}
 
-		$user_data = $this->user_model->user();
+		$user_data = $this->user_model->user( $user_id );
 
 		$user_data['muber_of_forms'] = $number_of_forms;
 		return rest_ensure_response( $user_data );
@@ -216,16 +218,17 @@ class AFASM_User_Controller {
 	public function user_form_type_home( $request ) {
 		$key = sanitize_text_field( $request['form_type'] );
 
+		$user_id = absint( $request['user_id'] );
+
 		$number_of_forms = 0;
 
 		$form = ( new AFASM_Config() )->form_model( $key );
 
 		if ( is_object( $form ) ) {
-			$user            = wp_get_current_user();
-			$number_of_forms = $form->user_form_count( $user->ID );
+			$number_of_forms = $form->user_form_count( $user_id );
 		}
 
-		$user_data = $this->user_model->user();
+		$user_data = $this->user_model->user( $user_id );
 
 		$user_data['muber_of_forms'] = $number_of_forms;
 
@@ -310,8 +313,8 @@ class AFASM_User_Controller {
 	 */
 	public function logout( $request ) {
 		$device_id = sanitize_text_field( $request['device_id'] );
-		$user      = wp_get_current_user();
-		$result    = $this->user_model->logout( $user->ID, $device_id );
+		$user_id = absint( $request['user_id'] );
+		$result    = $this->user_model->logout( $user_id, $device_id );
 		return rest_ensure_response( $result );
 	}
 

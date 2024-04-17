@@ -51,8 +51,9 @@ class AFASM_User_Devices_Controller {
 		$device_id       = sanitize_text_field( $request['device_id'] );
 		$device_language = sanitize_text_field( $request['device_language'] );
 
-		$user   = wp_get_current_user();
-		$result = $this->user_devices_model->create_device_register_if_not_exist( $user->ID, $device_id, $device_language, $expo_token );
+		$user_id = absint( $request['user_id'] );
+
+		$result = $this->user_devices_model->create_device_register_if_not_exist( $user_id, $device_id, $device_language, $expo_token );
 
 		if ( ! empty( $result ) ) {
 			$notification_subscription_model = new AFASM_Notification_Subscription_Model();
@@ -74,8 +75,8 @@ class AFASM_User_Devices_Controller {
 		$device_id       = sanitize_text_field( $request['device_id'] );
 		$device_language = sanitize_text_field( $request['device_language'] );
 
-		$user   = wp_get_current_user();
-		$result = $this->user_devices_model->language( $user->ID, $device_id, $device_language );
+		$user_id = absint( $request['user_id'] );
+		$result = $this->user_devices_model->language( $user_id, $device_id, $device_language );
 		return rest_ensure_response( $result );
 
 	}

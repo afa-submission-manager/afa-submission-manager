@@ -113,13 +113,13 @@ class AFASM_Config {
 	 */
 	public function afasm_check_authorization( $request ) {
 
-		if ( ! is_user_logged_in() ) {
+		$user_id = absint( $request['user_id'] );
+
+		if ( ! $user_id ) {
 			return false;
 		}
 
-		$user = wp_get_current_user();
-
-		$user_can_manage_afa = ( new AFASM_User_Model() )->user_can_manage_afa( $user->ID );
+		$user_can_manage_afa = ( new AFASM_User_Model() )->user_can_manage_afa( $user_id );
 
 		if ( ! $user_can_manage_afa ) {
 			return false;

@@ -128,7 +128,7 @@ class AFASM_JWT_Plugin {
 
 					$jwt     = $split_authorization[1];
 					$decoded = JWT::decode( $jwt, new Key( $key, 'HS256' ) );
-					wp_set_current_user( $decoded->id );
+					$request->set_param( 'user_id', $decoded->id );
 					return $request;
 				} catch ( Exception $e ) {
 
