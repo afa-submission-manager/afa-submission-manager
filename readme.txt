@@ -1,7 +1,7 @@
 === AFA - Mobile-Ready Submission Manager ===
 Contributors: claudionhangapc, marciogoes
 Donate link: https://www.paypal.com/donate/?hosted_button_id=PN2UZZWDZ4Y36
-Tags: forms, contact form plugin, contact form 7, Flamingo, GravityForms, WPForms, weForms
+Tags: contact form plugin, contact form 7, GravityForms, WPForms
 Requires at least: 5.0
 Tested up to: 6.3
 Stable tag: 1.1.0
@@ -9,13 +9,21 @@ Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-AFA - Mobile-Ready Submission allows you to receive Contact Form 7, Gravity Forms, WPForms, and more submissions directly on your phone with the "AFA Mobile App".
+AFA - Mobile-Ready Submission allows you to receive forms submissions directly on your phone with the "AFA Mobile App".
 
 == Description ==
 
 AFA - Mobile-Ready Submission Manager is powerful WordPress plugin designed to enhance your form management experience. Our plugin simplifies form entry management, providing you with the tools to streamline the process and save time.
 Our plugin goes beyond the desktop, offering a robust API that empowers your mobile app users to effortlessly view form submissions on the go  through the **AFA Mobile App**. Seamlessly integrate our plugin with popular WordPress form builders, granting your users the ability to oversee submissions from anywhere.
 Stay organized, gain insights, and enhance user interactions, all within your WordPress dashboard and through our dedicated API. With our user-friendly plugin, you can maintain control and transform how you manage form submissions. Dive into the possibilities today and revolutionize your approach to form management.
+
+
+[**GET IT ON GOOGLE PLAY**](https://play.google.com/store/apps/details?id=com.claudionhangapc.afa4wp)
+
+
+**Here is step by step guide**
+
+[youtube https://www.youtube.com/watch?v=7qH2Ouvd74A]
 
 **PLUGIN FEATURES**
 
